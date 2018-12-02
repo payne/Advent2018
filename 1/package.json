@@ -1,0 +1,11 @@
+{
+  "name": "payne_advent2018_day1",
+  "version": "0.0.1",
+  "description": "Playing with https://adventofcode.com/2018/day/1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt Payne",
+  "license": "ISC"
+}
