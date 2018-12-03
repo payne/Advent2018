@@ -18,18 +18,7 @@ function* loop(data) {
     i = i % data.length;
   }
 }
-const stringFrom = s => {
-  Array.from(s).join();
-  /*
-  let r = "";
-  it = s.values();
-  let v = null;
-  while ((v = it.next().value)) {
-    r = r + "," + v;
-  }
-  return r;
-  */
-};
+const stringFrom = s => Array.from(s).join();
 const firstRepeatedTwice = data => {
   const seen = new Set();
   const it = loop(data);
@@ -52,6 +41,10 @@ describe("Hello World", function() {
   });
   it("firstRepeatedTwice example 2", function() {
     expect(firstRepeatedTwice([+3, +3, +4, -2, -4])).toBe(10);
+  });
+  it("firstRepeatedTwice for input is 750", function() {
+    const input = readInput();
+    expect(firstRepeatedTwice(input)).toBe(750);
   });
 
   it("has a resultingFrequency", function() {
