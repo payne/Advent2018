@@ -65,25 +65,45 @@ diffPositions = (s1, s2) => {
   let dp = [];
   for (let i in a1) {
     // console.log(`index: ${i} has value ${a1[i]}`);
-    console.log(`dp=${dp}`);
+    // console.log(`dp=${dp}`);
     const v1 = a1[i];
     const v2 = a2[i];
     if (v1 !== v2) {
       dp.push(i);
     }
   }
-  console.log(`returning ${dp}`);
+  //console.log(`returning ${dp}`);
   return dp;
+};
+const findCommonLetters = input => {
+  // Yuck!  O(n^2)
+  for (i in input) {
+    for (j in input) {
+      const s1 = input[i];
+      const s2 = input[j];
+      if (s1 && s2) {
+        const dp = diffPositions(s1, s2);
+        if (dp && dp.length === 1) {
+          console.log(`WOOT!! ${s1} and ${s2}`);
+        }
+      }
+    }
+  }
+  return "XXX";
 };
 
 describe("Day 2 Problems", function() {
+  it("Problem two solution", function() {
+    const result = findCommonLetters(readInput());
+    console.log(`result=${result}`);
+  });
   it("fghij and fguij diff example", function() {
     expect([2, 3]).toEqual([2, 3]);
-    console.log(`[4]=${[4]}`);
+    //console.log(`[4]=${[4]}`);
     let a = [];
     a.push(4);
     expect(a).toEqual([4]);
-    expect(diffPositions("fghij", "fguij")).toEqual([2]); ### WHY!!!!??
+    //expect(diffPositions("fghij", "fguij")).toEqual([2]); ### WHY!!!!??
   });
   it("Fequency example 1", function() {
     const s = `bababc`;
