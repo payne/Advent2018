@@ -1,0 +1,14 @@
+{
+  "name": "payne_advent2018_day2",
+  "version": "0.0.1",
+  "description": "Playing with https://adventofcode.com/2018/day/2",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine day2.spec.js"
+  },
+  "author": "Matt Payne",
+  "license": "ISC",
+  "dependencies": {
+    "jasmine": "^3.3.0"
+  }
+}

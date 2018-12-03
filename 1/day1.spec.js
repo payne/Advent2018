@@ -35,7 +35,7 @@ const firstRepeatedTwice = data => {
   }
 };
 
-describe("Hello World", function() {
+describe("Day 1 Problems", function() {
   it("firstRepeatedTwice example 1", function() {
     expect(firstRepeatedTwice([1, -1])).toBe(0);
   });
