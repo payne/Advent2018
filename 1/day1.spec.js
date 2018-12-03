@@ -8,6 +8,8 @@ const readInput = function() {
     .map(s => 1 * s);
 };
 
+const resultingFrequency = data => data.reduce((a, v) => a + 1 * v, 0);
+
 describe("Hello World", function() {
   var theData = null;
 
@@ -20,7 +22,8 @@ describe("Hello World", function() {
     expect(i.length).toBe(986);
   });
 
-  it("says hello world", function() {
-    //console.log(`length ${theData.length}`);
+  it("has a resultingFrequency", function() {
+    const input = readInput();
+    expect(resultingFrequency(input)).toBe(466);
   });
 });
