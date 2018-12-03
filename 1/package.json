@@ -4,11 +4,11 @@
   "description": "Playing with https://adventofcode.com/2018/day/1",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/jasmine-node day1.spec.js"
+    "test": "./node_modules/.bin/jasmine day1.spec.js"
   },
   "author": "Matt Payne",
   "license": "ISC",
   "dependencies": {
-    "jasmine-node": "^1.16.2"
+    "jasmine": "^3.3.0"
   }
 }

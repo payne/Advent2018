@@ -1,4 +1,3 @@
-var fs = require("fs");
 var Day1 = require("../app/day1");
 
 describe("Day 1 problem", function() {
