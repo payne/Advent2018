@@ -75,8 +75,18 @@ diffPositions = (s1, s2) => {
   //console.log(`returning ${dp}`);
   return dp;
 };
+
+const findCommon = (s1, s2) => {
+  let common = [];
+  for (i in s1) {
+    if (s1[i] === s2[i]) common.push(s1[i]);
+  }
+  return common;
+};
+
 const findCommonLetters = input => {
   // Yuck!  O(n^2)
+  let commonLetters = null;
   for (i in input) {
     for (j in input) {
       const s1 = input[i];
@@ -85,11 +95,14 @@ const findCommonLetters = input => {
         const dp = diffPositions(s1, s2);
         if (dp && dp.length === 1) {
           console.log(`WOOT!! ${s1} and ${s2}`);
+          commonLetters = findCommon(s1, s2);
+          console.log(`commonLetters=${commonLetters}`);
+          return commonLetters;
         }
       }
     }
   }
-  return "XXX";
+  return commonLetters;
 };
 
 describe("Day 2 Problems", function() {
