@@ -94,9 +94,8 @@ const findCommonLetters = input => {
       if (s1 && s2) {
         const dp = diffPositions(s1, s2);
         if (dp && dp.length === 1) {
-          console.log(`WOOT!! ${s1} and ${s2}`);
-          commonLetters = findCommon(s1, s2);
-          console.log(`commonLetters=${commonLetters}`);
+          //console.log(`WOOT!! ${s1} and ${s2}`);
+          commonLetters = findCommon(s1, s2).join("");
           return commonLetters;
         }
       }
@@ -107,8 +106,7 @@ const findCommonLetters = input => {
 
 describe("Day 2 Problems", function() {
   it("Problem two solution", function() {
-    const result = findCommonLetters(readInput());
-    console.log(`result=${result}`);
+    expect(findCommonLetters(readInput())).toBe(`qysdtrkloagnfozuwujmhrbvx`);
   });
   it("fghij and fguij diff example", function() {
     expect([2, 3]).toEqual([2, 3]);
