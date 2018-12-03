@@ -13,12 +13,14 @@ function* loop(data) {
   let i = 0;
   while (true) {
     const r = data[i++];
-    console.log(`about to yield ${r}`);
+    //console.log(`about to yield ${r}`);
     yield r;
     i = i % data.length;
   }
 }
 const stringFrom = s => {
+  Array.from(s).join();
+  /*
   let r = "";
   it = s.values();
   let v = null;
@@ -26,6 +28,7 @@ const stringFrom = s => {
     r = r + "," + v;
   }
   return r;
+  */
 };
 const firstRepeatedTwice = data => {
   const seen = new Set();
@@ -39,7 +42,7 @@ const firstRepeatedTwice = data => {
       return current;
     }
     seen.add(current);
-    console.log(`seen=${stringFrom(seen)}`);
+    //console.log(`seen=${stringFrom(seen)}`);
   }
 };
 
@@ -47,6 +50,10 @@ describe("Hello World", function() {
   it("firstRepeatedTwice example 1", function() {
     expect(firstRepeatedTwice([1, -1])).toBe(0);
   });
+  it("firstRepeatedTwice example 2", function() {
+    expect(firstRepeatedTwice([+3, +3, +4, -2, -4])).toBe(10);
+  });
+
   it("has a resultingFrequency", function() {
     const input = readInput();
     expect(resultingFrequency(input)).toBe(466);
